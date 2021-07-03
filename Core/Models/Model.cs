@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NetCoreAng.Models
+namespace NetCoreAng.Core.Models
 {
     [Table("Models")]
     public class Model

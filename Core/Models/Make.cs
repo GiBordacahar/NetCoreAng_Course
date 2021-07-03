@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace NetCoreAng.Models
+namespace NetCoreAng.Core.Models
 {
     public class Make
     {

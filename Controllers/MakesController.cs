@@ -4,7 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NetCoreAng.Controllers.Resources;
-using NetCoreAng.Models;
+using NetCoreAng.Core.Models;
 using NetCoreAng.Persistence;
 
 namespace NetCoreAng.Controllers

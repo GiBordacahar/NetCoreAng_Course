@@ -4,7 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NetCoreAng.Controllers.Resources;
-using NetCoreAng.Models;
+using NetCoreAng.Core.Models;
 using NetCoreAng.Persistence;
 
 namespace NetCoreAng.Controllers
@@ -20,10 +20,10 @@ namespace NetCoreAng.Controllers
     }
 
     [HttpGet("/api/features")]
-    public async Task<IEnumerable<FeatureResource>> GetFeatures()
+    public async Task<IEnumerable<KeyValuePairResource>> GetFeatures()
     {
       var features = await context.Features.ToListAsync();
-      return mapper.Map<List<Feature>, List<FeatureResource>>(features); 
+      return mapper.Map<List<Feature>, List<KeyValuePairResource>>(features); 
     }
   }
 }

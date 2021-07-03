@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using NetCoreAng.Models;
+using NetCoreAng.Core.Models;
 
 namespace NetCoreAng.Persistence
 {

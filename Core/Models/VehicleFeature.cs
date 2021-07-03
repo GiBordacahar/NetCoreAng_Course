@@ -1,7 +1,7 @@
 
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NetCoreAng.Models
+namespace NetCoreAng.Core.Models
 {
     [Table("VehicleFeatures")]
     public class VehicleFeature
