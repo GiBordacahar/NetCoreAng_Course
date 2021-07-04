@@ -1,3 +1,4 @@
+import { AuthService } from '@auth0/auth0-angular';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+
+  constructor(private auth: AuthService) {
+    
+  }
+
   isExpanded = false;
 
   collapse() {

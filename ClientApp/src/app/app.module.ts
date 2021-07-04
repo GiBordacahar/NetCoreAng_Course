@@ -18,6 +18,7 @@ import { VehicleService } from 'src/services/vehicle.service';
 import { AppErrorHandler } from './app.error-handler';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').install();
 
@@ -31,7 +32,8 @@ Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').instal
     VehicleFormComponent,
     VehicleListComponent,
     PaginationComponent,
-    ViewVehicleComponent
+    ViewVehicleComponent,
+    // AuthButtonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,7 +50,12 @@ Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').instal
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: '**', redirectTo: 'home' }
-    ])
+    ]),
+    // Import the module into the application, with configuration
+    AuthModule.forRoot({
+      domain: 'netcoreangcourse.us.auth0.com',
+      clientId: 'cF7SYkDM2RqFPyGKNGq2gm504Szadevb'
+    }),
   ],
   providers: [
     { provide: ErrorHandler, useClass: AppErrorHandler },
