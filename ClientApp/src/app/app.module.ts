@@ -1,3 +1,4 @@
+import { PaginationComponent } from './shared/pagination.component';
 import * as Raven from 'raven-js'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { VehicleService } from 'src/services/vehicle.service';
 import { AppErrorHandler } from './app.error-handler';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').install();
 
@@ -24,7 +26,9 @@ Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').instal
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    VehicleFormComponent
+    VehicleFormComponent,
+    VehicleListComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,8 +39,11 @@ Raven.config('https://d37bba0c459b46e0857e6e2b3aeff09b@sentry.io/155312').instal
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'vehicles/new', component: VehicleFormComponent },
       { path: 'vehicles/:id', component: VehicleFormComponent },
+      { path: 'vehicles', component: VehicleListComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: '**', redirectTo: 'home' }
     ])
   ],
   providers: [

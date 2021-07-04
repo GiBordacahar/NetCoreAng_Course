@@ -7,6 +7,7 @@ namespace NetCoreAng.Core
     {
         void Add(Vehicle vehicle);
         Task<Vehicle> GetVehicle(int id, bool includeRelated = true);
+        Task<QueryResult<Vehicle>> GetVehicles(VehicleQuery queryObj);
         void Remove(Vehicle vehicle);
     }
 }
